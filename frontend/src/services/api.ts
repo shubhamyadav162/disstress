@@ -1,7 +1,12 @@
 // API Configuration
 const getBaseUrl = () => {
     const envUrl = import.meta.env.VITE_API_URL;
-    if (!envUrl) return '/api/v1';
+    if (!envUrl) {
+        if (typeof window !== 'undefined' && window.location.hostname === 'localhost') {
+            return 'http://localhost:5000/api/v1';
+        }
+        return '/_/backend/api/v1';
+    }
 
     // If it's a full URL and doesn't end with /api/v1, append it
     if (envUrl.startsWith('http')) {
@@ -178,4 +183,3 @@ class ApiClient {
 
 export const api = new ApiClient(API_BASE_URL);
 export default api;
-

@@ -49,6 +49,15 @@ coverage/
 *.tmp
 github_deploy_key
 github_deploy_key.pub
+github_deploy_key_rsa
+github_deploy_key_rsa.pub
+github_deploy_key_rsa_pem
+github_deploy_key_rsa_pem.pub
 vpsinfo.md
 id_ed25519
 vps_key.pem
+
+# Files containing historical credentials
+MIGRATION_GUIDE.md
+CHECKPOINT_WORKING_STATE.md
+flirt_without_broker.md
